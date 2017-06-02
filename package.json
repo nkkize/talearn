@@ -7,6 +7,10 @@
     "start" : "node app.js"
   },
   "dependencies" : {
-    "express" : "latest"
+    "express" : "latest",
+    "mongodb": "^2.2.25",
+    "request": "2.81.0",
+    "mustache": "https://registry.npmjs.org/mustache/-/mustache-2.3.0.tgz",
+    "ejs": "^2.5.6"
   }
 }

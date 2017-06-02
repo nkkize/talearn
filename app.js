@@ -2,17 +2,20 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
+const dataController = require('./controllers/dataController');
 
+
+app.set('view engine', 'ejs');
 
 //routes
 /*app.get('/',function(req, res){
 	res.send('Hello World!');
 });*/
 
-router.use(function (req, res, next) {
+/*router.use(function (req, res, next) {
 	console.log("/"+req.method);
 	next();
-});
+});*/
 
 router.get("/", function(req, res){
 	res.sendFile(path + "index.html")
@@ -29,6 +32,9 @@ router.get("/contact", function(req, res){
 router.get("/timetable", function(req, res){
     res.sendFile(path + "timetable.html")
 });
+
+router.route('/home')
+    .get( dataController.home);
 
 app.use("/",router);
 
